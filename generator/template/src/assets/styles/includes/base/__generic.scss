@@ -1,0 +1,28 @@
+/*************************************** MAIN LAYOUT ****************************************************/
+body {
+    font: 400 15px $font;
+    color: $mainColor;
+    background: #f6f6f6;
+}
+
+a {
+    color: $mainColor;
+}
+
+
+/*************************************** GENERIC CLASS ****************************************************/
+.center {
+    text-align: center;
+}
+
+.right {
+    text-align: right;
+}
+
+.flex {
+    display: flex;
+}
+
+.grid {
+    display: grid;
+}

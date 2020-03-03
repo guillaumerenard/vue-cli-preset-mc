@@ -1,0 +1,40 @@
+.v--modal-overlay {
+
+    label {
+
+    }
+
+
+    .close-modal {
+        -webkit-appearance: none;
+        appearance: none;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        border: 0;
+        cursor: pointer;
+        background: transparent;
+        width: 28px;
+        height: 28px;
+    
+        svg {
+            fill: $mainColor;
+            width: 16px;
+            height: 16px;
+    
+            path {
+                stroke: $mainColor;
+            }
+        }
+    
+        &:hover {
+            svg {
+                fill: $error;
+            }
+    
+            path {
+                stroke: $error;
+            }
+        }
+    }
+}

@@ -1,0 +1,29 @@
+.accordeon {
+    width: 100%;
+    overflow: hidden;
+
+    &-content {
+      max-height: 0;
+      background: rgb(240, 240, 240);
+      line-height: 22px;
+      padding: 0 25px;
+      box-shadow: 2px 2px 2px #D7D7D7;
+      transition: all .35s;
+    }
+
+  }
+
+
+// :checked
+input.input-accordeon {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+}
+
+input:checked {
+    ~ .accordeon-content {
+        max-height: 10000px;
+        padding: 25px;
+    }
+}

@@ -1,0 +1,157 @@
+
+.checkbox,
+.radio {
+
+    label {
+        display: inline-block;
+        cursor: pointer;
+        position: relative; 
+
+        span {
+            display: inline-block;
+            margin: -2px 5px 0 0;
+            position: relative;
+            background-color: #FFF;
+            width: 21px;
+            height: 21px;
+            transform-origin: center;
+            border: 1px solid $mainColor;
+            vertical-align: -2px;
+            transition: background-color 150ms 200ms, transform 350ms cubic-bezier(0.78, -1.22, 0.17, 1.89);
+
+            &::before {
+                content: "";
+                width: 0px;
+                height: 2px;
+                border-radius: 2px; 
+                background: $mainColor;
+                position: absolute;
+                transform: rotate(45deg);
+                top: 9px;
+                left: 6px; 
+                transition: width 50ms ease 50ms;
+                transform-origin: 0% 0%;
+            }
+
+            &::after {
+                content: "";
+                width: 0;
+                height: 2px;
+                border-radius: 2px; 
+                background: $mainColor;
+                position: absolute;
+                transform: rotate(305deg);
+                top: 13px; 
+                left: 7px;
+                transition: width 50ms ease;
+                transform-origin: 0% 0%;
+            }
+        }
+
+        &:hover {
+            span {
+                &::before {
+                    width: 5px;
+                    transition: width 100ms ease;
+                }
+
+                &::after {
+                    width: 10px;
+                    transition: width 150ms ease 100ms;
+                }
+            }
+        }
+    }
+
+    input[type="checkbox"],
+    input[type="radio"] {
+        display: none; 
+
+        &[disabled] + label {
+            cursor: auto;
+        }
+
+        &[disabled] + label span,
+        &[disabled]:checked + label span {
+            background: #dedede;
+            border: 2px solid #dedede;
+            transform: scale(1);
+
+            &::before,
+            &::after {
+                background: #999;
+            }
+        }
+
+        &[disabled] + label:hover span {
+            background-color: #dedede;
+            transform: scale(1);
+            cursor: auto;
+
+            &::before,
+            &::after {
+                background: #dedede;
+            }
+        }
+
+        &[disabled]:checked + label:hover span {
+            background-color: #dedede;
+            transform: scale(1);
+            cursor: auto;
+
+            &::before,
+            &::after {
+                background: #999;
+            }
+        }
+
+        &:checked {
+            + label {
+                span {
+                    background-color: $mainColor;
+                    transform: scale(1.1);
+                    border: 1px solid $mainColor;
+
+                    &::after {
+                        width: 10px;
+                        background: #fff;
+                        transition: width 150ms ease 100ms;
+                    }
+
+                    &::before {
+                        width: 5px;
+                        background: #fff;
+                        transition: width 150ms ease 100ms;
+
+                    }
+                }
+
+                &:hover {
+                    span {
+                        background-color: $mainColor;
+                        transform: scale(1.2);
+
+                        &::after {
+                            width: 10px;
+                            background: #fff;
+                            transition: width 150ms ease 100ms;
+
+                        }
+
+                        &::before {
+                            width: 5px;
+                            background: #fff;
+                            transition: width 150ms ease 100ms;
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    input[type="radio"] + label span {
+        border-radius: 50%;
+    }
+
+}

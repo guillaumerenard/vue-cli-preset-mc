@@ -1,0 +1,18 @@
+%button {
+    background: $mainColor;
+    color: #fff;
+    font: 400 13px $font;
+    text-transform: uppercase;
+    padding: 12px 25px;
+    //border-radius: 5px;
+    border: 0;
+    cursor: pointer;
+
+    &:hover {
+        background: $mainColor;
+    }
+}
+
+.btn {
+    @extend %button;
+}

@@ -1,0 +1,2 @@
+VUE_APP_AZURE_AD_INSTANCE=https://login.microsoftonline.com
+VUE_APP_AZURE_AD_CALLBACKPATH=/auth
