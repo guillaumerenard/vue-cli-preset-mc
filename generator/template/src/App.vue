@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="main" v-if="isAuthenticated">
-      <button @click="logout">Logout</button>
+      <button class="btn" @click="logout">Logout</button>
       <div class="main-content">
             <router-view></router-view>
         </div>
